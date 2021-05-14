@@ -1,8 +1,6 @@
 
 <head> 
-    <!-- FMfloc GmbH 2018 -->
-    <!-- All rights reserved -->
-    <!-- WebApp written by SJ - info@fmfloc.de -->
+    <!-- stjaku 2021 -->
     <script src="jquery-3.0.0.min.js"></script>  
     <meta charset="UTF-8">
     <meta name="mobile-web-app-capable" content="yes">
@@ -22,7 +20,7 @@
 <div id="page">
     <div id="obenlinks"> </div>
   <div id="kopfzeile">
-    Overview
+    Übersicht
   </div>
 
 
@@ -56,24 +54,3 @@
     
 </div>
 
-  <script type="text/javascript">
-        $(document).ready(function(){
-            $.ajaxSetup({ cache: false });
-        setInterval(function() {
-            $.get("iDrySolids.htm", function(result){
-                $('#DrySolids').text(result.trim());
-            });
-        },1000);
-        });
-    </script>
-    
-<script type="text/javascript">
-        $(document).ready(function(){
-            $.ajaxSetup({ cache: false });
-        setInterval(function() {
-            $.get("iSludgeFlow.htm", function(result){
-                $('#SludgeFlow').text(result.trim());
-            });
-        },1000);
-        });
-    </script>
