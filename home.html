@@ -1,0 +1,79 @@
+
+<head> 
+    <!-- FMfloc GmbH 2018 -->
+    <!-- All rights reserved -->
+    <!-- WebApp written by SJ - info@fmfloc.de -->
+    <script src="jquery-3.0.0.min.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/apple-touch-icon.png">
+    <title>FMfloc WebApp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">      
+    <link rel="stylesheet" href="./css/fontawesome.css">      
+    <link rel="stylesheet" href="./css/solid.css">    
+        <!-- <link rel="stylesheet" type="text/css" href="home.css"> -->
+        <!-- <meta http-equiv="refresh" content="1" > -->	
+        <!-- meta tag refreshes page every second -->
+        <!-- <script type="text/javascript"> setInterval("document.location.reload()",10000); </script> -->
+  </head>
+
+<div id="page">
+    <div id="obenlinks"> </div>
+  <div id="kopfzeile">
+    Overview
+  </div>
+
+
+    
+  <div id="navi">
+        <li> <a class="active" href="home.html"> <i class="fas fa-home"></i> </a> </li> <br>
+		<li> <a href="settings.html"> <i class="fas fa-cog"></i>  </a> </li>    <br>
+		<li> <a href="totalizer.html"> <i class="fas fa-history"></i> </a> </li>  <br>
+  </div>
+
+    
+    <blue>
+  <div id="inhalte">
+
+    Status: <br>
+        <t1>- </t1> <br>
+    
+      Sludge Flow: <br>
+      <t1> <label id="SludgeFlow">0</label>m³/h </t1> 
+  </div>
+            </blue>
+
+      <div id="inhalte2">
+    Dry Solids: <br>
+  <t1> <label id="DrySolids">0</label>% </t1>   
+  </div>
+
+    <div id="fußzeile">
+        <img src="fmfloc.png" alt="FMfloc Logo" class="FootIMG">
+  </div>    
+    
+</div>
+
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("iDrySolids.htm", function(result){
+                $('#DrySolids').text(result.trim());
+            });
+        },1000);
+        });
+    </script>
+    
+<script type="text/javascript">
+        $(document).ready(function(){
+            $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("iSludgeFlow.htm", function(result){
+                $('#SludgeFlow').text(result.trim());
+            });
+        },1000);
+        });
+    </script>
